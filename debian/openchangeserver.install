@@ -1,6 +1,6 @@
-usr/sbin/*
-usr/lib/libmapiserver.so.*
-usr/lib/openchange/dcerpc_mapiproxy_server
+usr/sbin
+usr/lib/*/libmapiserver.so.*
+usr/lib/*/openchange/dcerpc_mapiproxy_server
 usr/lib/python*/dist-packages/openchange/*.py
 usr/lib/python*/dist-packages/openchange/web/*.py
 usr/lib/python*/dist-packages/openchange/web/auth/*.py

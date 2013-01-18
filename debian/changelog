@@ -1,9 +1,8 @@
-openchange (1:1.0.r3960.sogo-1~inverse1.0) unstable; urgency=low
+openchange (1:1.0.r3960.sogo-1) unstable; urgency=low
 
-  * Non-maintainer upload.
-  * Make use of revision r3919 from openchange/sogo branch
+  * New upstream release.
 
- -- Wolfgang Sourdeau <wsourdeau@inverse.ca>  Tue, 03 Apr 2012 14:20:01 -0400
+ -- Wolfgang Sourdeau <wsourdeau@inverse.ca>  Tue, 10 Apr 2012 10:05:06 -0400
 
 openchange (1:1.0-1) unstable; urgency=low
 

@@ -1,1 +1,1 @@
-usr/lib/libocpf.so.*
+usr/lib/*/libocpf.so.*

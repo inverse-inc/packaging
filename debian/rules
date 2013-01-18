@@ -3,6 +3,7 @@
 #
 LDFLAGS = -Wl,--as-needed
 DSOOPT = -shared -Wl,--as-needed -fPIC
+DEB_HOST_MULTIARCH ?= $(shell dpkg-architecture -qDEB_HOST_MULTIARCH)
 
 DESTDIR = $(CURDIR)/debian/tmp
 
@@ -18,9 +19,9 @@ override_dh_auto_configure:
 	LDFLAGS=-Wl,--as-needed BOOST_LIB_SUFFIX=-mt ./configure \
 		--prefix=/usr \
 		--mandir=/usr/share/man \
-		--with-modulesdir=/usr/lib/openchange \
+		--with-modulesdir=/usr/lib/$(DEB_HOST_MULTIARCH)/openchange \
 		--disable-pymapi \
-		--libdir=/usr/lib
+		--libdir=/usr/lib/$(DEB_HOST_MULTIARCH)
 	sed -i -e 's/site-packages/dist-packages/' config.mk
 
 override_dh_auto_test:
@@ -40,14 +41,11 @@ override_dh_auto_clean:
 	rm -f configure config.h.in pyopenchange/mapistore/errors.c
 	rmdir bin || true
 
-override_dh_shlibdeps:
-	LD_LIBRARY_PATH=$(DESTDIR)/usr/lib:$$LD_LIBRARY_PATH dh_shlibdeps -a
-
 override_dh_auto_install:
 	install -d $(DESTDIR)/usr/lib/nagios/plugins
 	install -m 700 -d -o www-data -g www-data $(DESTDIR)/var/cache/ntlmauthhandler
 	$(MAKE) datadir=/usr/share/openchange install installman DESTDIR=$(DESTDIR) MANUALLY_CREATE_SYMLINKS=yes
-	mv $(DESTDIR)/usr/lib/nagios/check_exchange \
+	mv $(DESTDIR)/usr/lib/$(DEB_HOST_MULTIARCH)/nagios/check_exchange \
 	   $(DESTDIR)/usr/lib/nagios/plugins/check_exchange 
 	rm -rf $(DESTDIR)/usr/modules
 	# Don't install the testsuite for now

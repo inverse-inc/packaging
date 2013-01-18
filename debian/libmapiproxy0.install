@@ -1,1 +1,1 @@
-usr/lib/libmapiproxy.so.*
+usr/lib/*/libmapiproxy.so.*
