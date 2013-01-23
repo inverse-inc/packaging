@@ -311,7 +311,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/openchange/web/rpcproxy/rpcproxy/*
 
 %changelog
-* Mon Jan 23 2012 Jean Raby <jraby@inverse.ca> 1.0.prerelease
+* Mon Jan 23 2013 Jean Raby <jraby@inverse.ca> 1.0.prerelease
 - bin/ is back in source tree, stop creating it
 - Enable libocpf for now (disable patch0)
 
