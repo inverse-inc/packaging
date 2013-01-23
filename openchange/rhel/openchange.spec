@@ -147,12 +147,12 @@ for Samba, using wsgi.
 
 %prep
 %setup -q -n %{name}-%{version}
-%patch0 -p1
+#%patch0 -p1
 %patch1 -p0
 
 %build
 ./autogen.sh
-mkdir rpmbin bin
+mkdir rpmbin
 ln -s %{__python} rpmbin/python
 ln -s /usr/bin/%{python_config} rpmbin/python-config
 export PATH=$PWD/rpmbin:$PATH
@@ -257,7 +257,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libmapiadmin.so.*
 %{_libdir}/libmapi.so.*
 %{_libdir}/libmapiproxy.so.*
-# %{_libdir}/libocpf.so.*
+
+%{_libdir}/libocpf.so.*
 
 # %files devel
 # %defattr(-,root,root,-)
@@ -310,6 +311,11 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/openchange/web/rpcproxy/rpcproxy/*
 
 %changelog
+* Mon Jan 23 2012 Jean Raby <jraby@inverse.ca> 1.0.prerelease
+- bin/ is back in source tree, stop creating it
+- Enable libocpf for now (disable patch0)
+
+
 * Mon Nov 12 2012 Jean Raby <jraby@inverse.ca> 1.0.prerelease
 - Create bin/ - missing since move to git
 
