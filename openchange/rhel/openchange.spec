@@ -8,7 +8,7 @@
 %{!?python_noarch_sitearch: %global python_noarch_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
-%global samba4_version 4.0.0alpha18-2
+%global samba4_version 4.0.1
 %global talloc_version 1.2.0
 %global python_config python2.6-config
 
@@ -17,7 +17,7 @@
 # Licensing Note: The code is GPLv3+ and the IDL files are public domain.
 
 Name: openchange
-Version: 1.0.0%{?build_suffix}.sogo
+Version: 2.0.0%{?build_suffix}.sogo
 Release: 1%{?dist}
 Group: Applications/System
 Summary: Provides access to Microsoft Exchange servers using native protocols
