@@ -12,12 +12,14 @@
 %global talloc_version 1.2.0
 %global python_config python2.6-config
 
+%{!?build_version: %global build_version 2.0}
+
 ### Abstract ###
 
 # Licensing Note: The code is GPLv3+ and the IDL files are public domain.
 
 Name: openchange
-Version: 2.0.0%{?build_suffix}.sogo
+Version: %build_version
 Release: 1%{?dist}
 Group: Applications/System
 Summary: Provides access to Microsoft Exchange servers using native protocols
