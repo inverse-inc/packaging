@@ -76,5 +76,8 @@ override_dh_install:
 override_dh_fixperms:
 	dh_fixperms --exclude var/cache/ntlmauthhandler
 
+override_dh_strip:
+	dh_strip --dbg-package=openchangeserver-dbg
+
 get-orig-source:
 	./debian/build-orig.sh

@@ -293,3 +293,14 @@ Depends: libapache2-mod-wsgi,
 Description: A RPC-over-HTTP implementation for Samba, using wsgi
  This package contains a a RPC-over-HTTP python implementation
  for Samba, using wsgi.
+
+Package: openchangeserver-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: openchangeserver (= ${binary:Version}), ${misc:Depends}
+Description: Experimental MAPI (Exchange/Outlook) server
+ This is a plugin for Samba 4 that adds server-side support for the MAPI
+ protocol that is used by Microsoft Outlook and Exchange.
+ .
+ This package contains the debugging symbols
