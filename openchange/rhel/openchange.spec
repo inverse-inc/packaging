@@ -251,7 +251,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root,-)
-%doc ChangeLog COPYING IDL_LICENSE.txt VERSION
+%doc COPYING IDL_LICENSE.txt VERSION
 
 /var/cache/ntlmauthhandler
 
