@@ -299,7 +299,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/nagios/check_exchange
 %{_datadir}/samba/*
 %{_libdir}/libmapipp.so.*
-#%{_libdir}/samba/modules/dcerpc_server/dcesrv_mapiproxy.so
+%{_libdir}/samba/dcerpc_server/dcesrv_mapiproxy.so
 # %endif
 
 %files ocsmanager
