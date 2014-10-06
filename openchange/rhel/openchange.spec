@@ -8,11 +8,11 @@
 %{!?python_noarch_sitearch: %global python_noarch_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
-%global samba4_version 4.0.1
-%global talloc_version 1.2.0
+%global samba4_version 4.1.11
+%global talloc_version 2.2.1
 %global python_config python2.6-config
 
-%{!?build_version: %global build_version 2.0}
+%{!?build_version: %global build_version 2.2}
 
 ### Abstract ###
 
@@ -313,10 +313,12 @@ rm -rf $RPM_BUILD_ROOT
 /usr/lib/openchange/web/rpcproxy/rpcproxy/*
 
 %changelog
+* Mon Oct 6 2014 Inverse inc. <support@inverse.ca>
+- bumped version numbers
+
 * Mon Jan 23 2013 Jean Raby <jraby@inverse.ca> 1.0.prerelease
 - bin/ is back in source tree, stop creating it
 - Enable libocpf for now (disable patch0)
-
 
 * Mon Nov 12 2012 Jean Raby <jraby@inverse.ca> 1.0.prerelease
 - Create bin/ - missing since move to git
