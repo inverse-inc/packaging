@@ -162,7 +162,7 @@ export PATH=$PWD/rpmbin:$PATH
 CFLAGS="-O2 -ggdb" \
 PYTHON=%{__python} \
 PYTHON_CONFIG="/bin/false" \
-%configure --with-modulesdir=%{_libdir}/samba4/modules --datadir=%{_datadir}/samba PYTHON=%{__python}
+%configure --with-modulesdir=%{_libdir}/samba/modules --datadir=%{_datadir}/samba PYTHON=%{__python}
 
 # Parallel builds prohibited by makefile
 make
@@ -177,7 +177,7 @@ done
 %install
 rm -rf $RPM_BUILD_ROOTS
 
-make install DESTDIR=$RPM_BUILD_ROOT SERVER_MODULESDIR=%{_libdir}/samba4/modules/dcerpc_server
+make install DESTDIR=$RPM_BUILD_ROOT SERVER_MODULESDIR=%{_libdir}/samba/modules/dcerpc_server
 cp -r libmapi++ $RPM_BUILD_ROOT%{_includedir}
 
 # This makes the right links, as rpmlint requires that the
@@ -295,9 +295,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libmapiserver.so.*
 %{_libdir}/libmapistore.so.*
 # %{_libdir}/mapistore_backends/mapistore_sqlite3.so
-%{_libdir}/samba4/modules/*/*
+%{_libdir}/samba/modules/*/*
 %{_libdir}/nagios/check_exchange
 %{_datadir}/samba/*
+%{_libdir}/libmapipp.so.*
+#%{_libdir}/samba/modules/dcerpc_server/dcesrv_mapiproxy.so
 # %endif
 
 %files ocsmanager
