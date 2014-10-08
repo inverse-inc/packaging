@@ -32,7 +32,7 @@ Patch0: openchange-1.0-no_ocpf.diff
 Patch1: ocsmanager-ini-path-fix.diff
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 AutoReqProv: 0
-Requires: samba4 >= %{samba4_version}
+Requires: samba >= %{samba4_version}
 ### Build Dependencies ###
 
 BuildRequires: bison
@@ -42,7 +42,7 @@ BuildRequires: file
 BuildRequires: pkgconfig
 BuildRequires: libxslt
 BuildRequires: popt
-BuildRequires: samba4 >= %{samba4_version}
+BuildRequires: samba >= %{samba4_version}
 BuildRequires: sqlite-devel
 BuildRequires: zlib-devel
 BuildRequires: automake
