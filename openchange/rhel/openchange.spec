@@ -8,7 +8,7 @@
 %{!?python_noarch_sitearch: %global python_noarch_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(0)")}
 %{!?python_sitearch: %global python_sitearch %(%{__python} -c "from distutils.sysconfig import get_python_lib; print get_python_lib(1)")}
 
-%global samba4_version 4.1.11
+%global samba4_version 4.1.1
 %global talloc_version 2.2.1
 %global python_config python2.6-config
 
