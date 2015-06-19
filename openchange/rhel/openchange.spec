@@ -11,6 +11,7 @@
 %global samba4_version 4.1.1
 %global talloc_version 2.2.1
 %global python_config python2.6-config
+%global build_python_package 1
 
 %{!?build_version: %global build_version 2.2}
 
@@ -126,15 +127,15 @@ for Samba, using wsgi.
 # This package provides the user tools for OpenChange, providing access to
 # Microsoft Exchange servers using native protocols.
 
-# %if %{build_python_package}
-# %package python
-# Summary: Python bindings for OpenChange libraries
-# Group: Development/Libraries
-# Requires: openchange = %{version}-%{release}
+%if %{build_python_package}
+%package python
+Summary: Python bindings for OpenChange libraries
+Group: Development/Libraries
+Requires: openchange = %{version}-%{release}
 
-# %description python
-# This module contains a wrapper that allows the use of OpenChange via Python.
-# %endif
+%description python
+This module contains a wrapper that allows the use of OpenChange via Python.
+%endif
 
 # %if %{build_server_package}
 # %package server
@@ -282,11 +283,11 @@ rm -rf $RPM_BUILD_ROOT
 %{_bindir}/*
 %{_mandir}/man1/*
 
-# %if %{build_python_package}
-# %files python
-# %defattr(-,root,root,-)
+%if %{build_python_package}
+%files python
+%defattr(-,root,root,-)
 %{python_sitearch}/openchange
-# %endif
+%endif
 
 # %if %{build_server_package}
 # %files server
