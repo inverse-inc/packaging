@@ -162,7 +162,7 @@ export PATH=$PWD/rpmbin:$PATH
 CFLAGS="-O2 -ggdb" \
 PYTHON=%{__python} \
 PYTHON_CONFIG="/bin/false" \
-%configure --with-modulesdir=%{_libdir}/samba/modules --datadir=%{_datadir}/samba PYTHON=%{__python}
+%configure --with-modulesdir=%{_libdir}/samba/modules --datadir=%{_datadir}/samba PYTHON=%{__python} --enable-pyopenchange
 
 # Parallel builds prohibited by makefile
 make
